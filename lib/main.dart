@@ -1,6 +1,8 @@
+import 'package:crealivin_apps/screen/brand_screen/brand_singup_screen.dart';
+import 'package:crealivin_apps/screen/choosen_screen.dart';
+import 'package:crealivin_apps/screen/influencer_screen/influencer_singup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'screen/home_screen.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -29,7 +31,13 @@ class MyApp extends StatelessWidget {
         switch (settings.name) {
           case '/':
             return CupertinoPageRoute(
-                builder: (_) => const HomeScreen(), settings: settings);
+                builder: (_) => ChoosenScreen(), settings: settings);
+          case '/influencer-signup':
+            return CupertinoPageRoute(
+                builder: (_) => InfluencerSignupScreen(), settings: settings);
+          case '/brand-signup':
+            return CupertinoPageRoute(
+                builder: (_) => BrandSignupScreen(), settings: settings);
         }
         return null;
       },
