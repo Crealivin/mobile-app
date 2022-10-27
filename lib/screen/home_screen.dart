@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,7 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 38,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/choosen-signup');
+                      },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
@@ -308,7 +309,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     //width: 126.0,
                     height: 36,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/choosen-signup');
+                      },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
