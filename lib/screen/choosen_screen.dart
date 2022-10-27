@@ -125,7 +125,7 @@ class _ChoosenScreenState extends State<ChoosenScreen> {
                 const Text('Sudah punya akun ?'),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/choose-signin');
+                    Navigator.pushReplacementNamed(context, '/choose-signin');
                   },
                   child: const Text('Masuk'),
                 ),

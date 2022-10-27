@@ -130,7 +130,7 @@ class _ChooseSignInScreenState extends State<ChooseSignInScreen> {
                 const Text('Belum punya akun ?'),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/choosen-signup');
+                    Navigator.pushReplacementNamed(context, '/choosen-signup');
                   },
                   child: const Text('Daftar'),
                 ),
