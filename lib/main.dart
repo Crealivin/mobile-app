@@ -1,3 +1,7 @@
+import 'package:crealivin_apps/screen/brand_screen/brand_signin_screen.dart';
+import 'package:crealivin_apps/screen/choosen_signin_screen.dart';
+import 'package:crealivin_apps/screen/influencer_screen/influencer_signin_screen.dart';
+import 'package:crealivin_apps/screen/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'screen/home_screen.dart';
@@ -22,14 +26,27 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: true,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
+        //textTheme: TextTheme(tit)
       ),
       initialRoute: '/',
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
           case '/':
             return CupertinoPageRoute(
+                builder: (_) => const SplashScreen(), settings: settings);
+          case '/home':
+            return CupertinoPageRoute(
                 builder: (_) => const HomeScreen(), settings: settings);
+          case '/choose-signin':
+            return CupertinoPageRoute(
+                builder: (_) => const ChooseSignInScreen(), settings: settings);
+          case '/brand-signin':
+            return CupertinoPageRoute(
+                builder: (_) => const BrandSignin(), settings: settings);
+          case '/influencer-signin':
+            return CupertinoPageRoute(
+                builder: (_) => const InfluencerSignin(), settings: settings);
         }
         return null;
       },
