@@ -2,9 +2,11 @@ import 'package:crealivin_apps/screen/brand_screen/brand_signin_screen.dart';
 import 'package:crealivin_apps/screen/choosen_signin_screen.dart';
 import 'package:crealivin_apps/screen/influencer_screen/influencer_signin_screen.dart';
 import 'package:crealivin_apps/screen/splash_screen.dart';
+import 'package:crealivin_apps/screen/brand_screen/brand_singup_screen.dart';
+import 'package:crealivin_apps/screen/choosen_screen.dart';
+import 'package:crealivin_apps/screen/influencer_screen/influencer_singup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'screen/home_screen.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -47,6 +49,13 @@ class MyApp extends StatelessWidget {
           case '/influencer-signin':
             return CupertinoPageRoute(
                 builder: (_) => const InfluencerSignin(), settings: settings);
+                builder: (_) => ChoosenScreen(), settings: settings);
+          case '/influencer-signup':
+            return CupertinoPageRoute(
+                builder: (_) => InfluencerSignupScreen(), settings: settings);
+          case '/brand-signup':
+            return CupertinoPageRoute(
+                builder: (_) => BrandSignupScreen(), settings: settings);
         }
         return null;
       },
