@@ -139,7 +139,9 @@ class _BrandSignupScreenState extends State<BrandSignupScreen> {
                       height: 30,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/verivication-brand-screen');
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black),
                       child: const Text(
