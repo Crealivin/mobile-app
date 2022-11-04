@@ -139,7 +139,9 @@ class _InfluencerSignupScreenState extends State<InfluencerSignupScreen> {
                       height: 30,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.pushReplacementNamed(context, '/verivication-influencer-screen');
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black),
                       child: const Text(

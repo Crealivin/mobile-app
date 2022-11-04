@@ -1,11 +1,15 @@
 import 'package:crealivin_apps/screen/brand_screen/brand_signin_screen.dart';
 import 'package:crealivin_apps/screen/choosen_signin_screen.dart';
+import 'package:crealivin_apps/screen/brand_screen/edit_profil_brand_screen.dart';
 import 'package:crealivin_apps/screen/home_screen.dart';
+import 'package:crealivin_apps/screen/influencer_screen/edit_profil_influencer_screen.dart';
 import 'package:crealivin_apps/screen/influencer_screen/influencer_signin_screen.dart';
+import 'package:crealivin_apps/screen/influencer_screen/verification_influencer_screen.dart';
 import 'package:crealivin_apps/screen/splash_screen.dart';
 import 'package:crealivin_apps/screen/brand_screen/brand_singup_screen.dart';
 import 'package:crealivin_apps/screen/choosen_screen.dart';
 import 'package:crealivin_apps/screen/influencer_screen/influencer_singup_screen.dart';
+import 'package:crealivin_apps/screen/brand_screen/verification_brand_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,6 +64,18 @@ class MyApp extends StatelessWidget {
           case '/brand-signup':
             return CupertinoPageRoute(
                 builder: (_) => const BrandSignupScreen(), settings: settings);
+          case '/verivication-brand-screen':
+            return CupertinoPageRoute(
+                builder: (_) => const VerificationBrandScreen(), settings: settings);
+          case '/verivication-influencer-screen':
+            return CupertinoPageRoute(
+                builder: (_) => const VerificationInfluencerScreen(), settings: settings);
+          case '/edit-profile-brand-screen':
+            return CupertinoPageRoute(
+                builder: (_) => const EditProfileBrandScreen(), settings: settings);
+           case '/edit-profile-influencer-screen':
+            return CupertinoPageRoute(
+                builder: (_) => const EditProfileInfluencerScreen(), settings: settings);
         }
         return null;
       },
