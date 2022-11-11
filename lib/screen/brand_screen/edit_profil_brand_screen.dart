@@ -174,7 +174,7 @@ class EditProfileBrandScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        print(_domisili.text);
+                        Navigator.pushNamed(context, '/choosen-picture-brand-screen');
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black),

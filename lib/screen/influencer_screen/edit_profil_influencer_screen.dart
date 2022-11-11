@@ -228,7 +228,7 @@ class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScree
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        print(_domisili.text);
+                        Navigator.pushNamed(context, '/choosen-picture-influencer-screen');
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black),
