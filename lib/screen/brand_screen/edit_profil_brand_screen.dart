@@ -11,7 +11,7 @@ class EditProfileBrandScreen extends StatelessWidget {
     final TextEditingController _instagram = TextEditingController();
     final TextEditingController _tiktok = TextEditingController();
     final TextEditingController _domisili = TextEditingController();
-    
+
     var itemsDomisili = [
       'Jakarta',
       'Depok',
@@ -39,7 +39,7 @@ class EditProfileBrandScreen extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.only(top: 20.0),
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -64,26 +64,26 @@ class EditProfileBrandScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          textEditProfile('*Username',_username),
+                          textEditProfile('*Username', _username),
                           const SizedBox(
                             height: 20,
                           ),
-                          textEditProfile('*Nama Lengkap',_namaLengkap),
+                          textEditProfile('*Nama Lengkap', _namaLengkap),
                           const SizedBox(
                             height: 20,
                           ),
-                          textEditProfile('*Nama Panggilan',_namaPangilan),
+                          textEditProfile('*Nama Panggilan', _namaPangilan),
                           const SizedBox(
                             height: 20,
                           ),
                           Stack(
                             children: [
-                              textEditProfile('*Domisili',_domisili),
+                              textEditProfile('*Domisili', _domisili),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 20,
                                   ),
                                   PopupMenuButton<String>(
@@ -115,24 +115,24 @@ class EditProfileBrandScreen extends StatelessWidget {
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.auto),
                           ),
-                          SizedBox(height: 5),
-                          Text(
+                          const SizedBox(height: 5),
+                          const Text(
                             '*Jangan melebihi 200 karakter',
                             style: TextStyle(fontSize: 10),
                           ),
-                          SizedBox(height: 40),
-                          Text(
+                          const SizedBox(height: 40),
+                          const Text(
                             'Sosial Mendia',
                             style: TextStyle(fontWeight: FontWeight.w700),
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          textEditProfile('*Instagram',_instagram),
                           const SizedBox(
                             height: 20,
                           ),
-                          textEditProfile('*Tiktok',_tiktok),
+                          textEditProfile('*Instagram', _instagram),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          textEditProfile('*Tiktok', _tiktok),
                           const SizedBox(
                             height: 20,
                           ),
@@ -193,12 +193,12 @@ class EditProfileBrandScreen extends StatelessWidget {
     );
   }
 
-  Widget textEditProfile(String _label, TextEditingController _controller ) {
+  Widget textEditProfile(String _label, TextEditingController _controller) {
     return TextField(
-      controller: _controller ,
+      controller: _controller,
       decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          label: Text(_label) ,
+          border: const OutlineInputBorder(),
+          label: Text(_label),
           floatingLabelBehavior: FloatingLabelBehavior.auto),
     );
   }

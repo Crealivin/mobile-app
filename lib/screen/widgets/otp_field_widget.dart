@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// ignore: must_be_immutable
 class OtpWidget extends StatelessWidget {
   TextEditingController controller;
   OtpWidget({
@@ -11,7 +12,7 @@ class OtpWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController _controller = controller;
-    return Container(
+    return SizedBox(
       height: 68,
       width: 50,
       child: TextField(
@@ -26,7 +27,6 @@ class OtpWidget extends StatelessWidget {
         ),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
           FilteringTextInputFormatter.digitsOnly
