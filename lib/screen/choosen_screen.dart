@@ -54,7 +54,7 @@ class _ChoosenScreenState extends State<ChoosenScreen> {
                               'assets/images/influenc.png',
                               'Seorang Influencer',
                             ),
-                            GestureDetector(
+                            InkWell(
                               onTap: () {
                                 setState(() {
                                   _isInfluencer = !_isInfluencer;
@@ -77,7 +77,7 @@ class _ChoosenScreenState extends State<ChoosenScreen> {
                               'assets/images/client.png',
                               'Pemilik Brand',
                             ),
-                            GestureDetector(
+                            InkWell(
                               onTap: () {
                                 setState(() {
                                   _isBrand = !_isBrand;
@@ -96,27 +96,32 @@ class _ChoosenScreenState extends State<ChoosenScreen> {
                     const SizedBox(
                       height: 50,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        if (_isInfluencer == true) {
-                          Navigator.pushNamed(context, '/influencer-signup');
-                        } else if (_isBrand == true) {
-                          Navigator.pushNamed(context, '/brand-signup');
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              behavior: SnackBarBehavior.floating,
-                              content:
-                                  Text('Opps silahkan pilih terlebih dahulu'),
-                            ),
-                          );
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black),
-                      child: const Text(
-                        'Lanjut',
-                        style: TextStyle(color: Colors.white),
+                    Container(
+                      width: MediaQuery.of(context).size.height*0.20,
+                      height: MediaQuery.of(context).size.height*0.05,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_isInfluencer == true) {
+                            Navigator.pushNamed(context, '/influencer-signup');
+                          } else if (_isBrand == true) {
+                            Navigator.pushNamed(context, '/brand-signup');
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                behavior: SnackBarBehavior.floating,
+                                content:
+                                    Text('Opps silahkan pilih terlebih dahulu'),
+                              ),
+                            );
+                          }
+                        },
+                      
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black),
+                        child: const Text(
+                          'Lanjut',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -152,8 +157,8 @@ class _ChoosenScreenState extends State<ChoosenScreen> {
       children: [
         Container(
           margin: const EdgeInsets.only(bottom: 12.0, top: 12.0),
-          height: 100,
-          width: 100,
+          height: MediaQuery.of(context).size.height/5.5,
+          width: MediaQuery.of(context).size.height/5.5,
           child: Image.asset(
             imageAsset,
             fit: BoxFit.cover,

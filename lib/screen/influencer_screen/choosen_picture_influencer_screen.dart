@@ -51,7 +51,7 @@ class _ChoosenPiictureInfluencerState extends State<ChoosenPiictureInfluencer> {
               const SizedBox(
                 height: 222,
               ),
-              uploadImg.displayImage != null
+              uploadImg.fileName != null
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -76,11 +76,11 @@ class _ChoosenPiictureInfluencerState extends State<ChoosenPiictureInfluencer> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black),
                   onPressed: () {
-                    uploadImg.pickFile();
+                    uploadImg.pickFile(context,'/upload-picture-influencer-screen');
                   },
                   child: Container(
                     width: 180,
-                    height: 48,
+                    height: MediaQuery.of(context).size.height*0.07,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -101,20 +101,7 @@ class _ChoosenPiictureInfluencerState extends State<ChoosenPiictureInfluencer> {
                   ))
             ],
           ),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-              onPressed: () {
-               Navigator.pushNamed(context, '/upload-picture-influencer-screen'); 
-              },
-              child: Text(
-                'Lanjut',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          )
+         SizedBox(height: 10,)
         ],
       )),
     );

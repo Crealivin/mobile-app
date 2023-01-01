@@ -36,7 +36,7 @@ class UploadProductScreen extends StatelessWidget {
             
           //   ));
 
-            print(provProduct.displayImage);
+            print(provProduct.fileName);
             print(namaProd.text);
             print(price.text);
             Navigator.pushNamed(context, '/done-regitration-brand-screen');
@@ -60,31 +60,32 @@ class UploadProductScreen extends StatelessWidget {
                 SizedBox(
                   height: 8,
                 ),
-                provProduct.displayImage != null
+               provProduct.fileName != null
                     ? Container(
                         height: 350,
                         width: double.infinity,
-                        child: Image.file(
-                          File(provProduct.displayImage.toString()),
+                        child: Image.memory(
+                         provProduct.fileBytes,
                           fit: BoxFit.cover,
                         ),
                       )
-                    : Container(
-                        height: 360,
-                        child: Image.asset('assets/images/Image_empty.png',fit: BoxFit.cover,),
-                      ),
+                    :
+                Container(
+                  height: 360,
+                  child: Image.asset('assets/images/Image_empty.png',fit: BoxFit.cover),
+                ),
                 SizedBox(
                   height: 24,
                 ),
-                textUploadProduct('Nama Produk', namaProd),
+                textUploadProduct('Nama Produk', namaProd,false),
                 SizedBox(
                   height: 24,
                 ),
-                textUploadProduct('Deskripsi Produk',deskripsi),
+                textUploadProduct('Deskripsi Produk',deskripsi,true),
                 SizedBox(
                   height: 24,
                 ),
-                textUploadProduct('Harga Produk',price),
+                textUploadProduct('Harga Produk',price,false),
               ],
             ),
           ),
@@ -93,8 +94,9 @@ class UploadProductScreen extends StatelessWidget {
     );
   }
 
-  Widget textUploadProduct(String _label, TextEditingController controller) {
+  Widget textUploadProduct(String _label, TextEditingController controller,bool maxLine) {
     return TextField(
+      maxLines: maxLine?5:1,
       controller: controller,
       decoration: InputDecoration(
           border: OutlineInputBorder(),

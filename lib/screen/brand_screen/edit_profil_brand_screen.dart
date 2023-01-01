@@ -60,7 +60,7 @@ class EditProfileBrandScreen extends StatelessWidget {
                       height: 32,
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                     
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -109,6 +109,7 @@ class EditProfileBrandScreen extends StatelessWidget {
                             height: 20,
                           ),
                           const TextField(
+                            maxLines: 5,
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 label: Text('Bio'),
@@ -172,15 +173,19 @@ class EditProfileBrandScreen extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/choosen-picture-brand-screen');
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black),
-                      child: const Text(
-                        'Lanjut',
-                        style: TextStyle(color: Colors.white),
+                    Container(
+                      height: MediaQuery.of(context).size.height*0.05,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/choosen-picture-brand-screen');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black),
+                        child: const Text(
+                          'Lanjut',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ],

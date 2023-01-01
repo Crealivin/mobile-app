@@ -51,29 +51,36 @@ class _ChoosenPiictureBrandState extends State<ChoosenPiictureBrand> {
               const SizedBox(
                 height: 222,
               ),
-
-              // uploadImg.fileDisplay != null ? Container(height: 200, child: Image.file(File(uploadImg.fileDisplay.toString()))): Container(),
-              // uploadImg.fileDisplay != null
-              //     ? Image.file()
-              //     : Container(),
-              uploadImg.displayImage != null ? Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.check, color: Colors.green,),
-                  SizedBox(width: 8,),
-                  Text('*Kilik lanjut untuk melanjutkan',style: TextStyle(color: Colors.green),),
-                ],
-              ): Container(),
-              SizedBox(height: 10,),
+              uploadImg.fileName != null
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.check,
+                          color: Colors.green,
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          '*Kilik lanjut untuk melanjutkan',
+                          style: TextStyle(color: Colors.green),
+                        ),
+                      ],
+                    )
+                  : Container(),
+              SizedBox(
+                height: 10,
+              ),
               ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black),
                   onPressed: () {
-                     uploadImg.pickFile();
+                    uploadImg.pickFile(context, '/upload-product-screen');
                   },
                   child: Container(
                     width: 172,
-                    height: 48,
+                    height: MediaQuery.of(context).size.height * 0.05,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -93,19 +100,6 @@ class _ChoosenPiictureBrandState extends State<ChoosenPiictureBrand> {
                   ))
             ],
           ),
-          Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-              child: ElevatedButton(
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/upload-product-screen');
-                  },
-                  child: Text(
-                    'Lanjut',
-                    style: TextStyle(color: Colors.white),
-                  )))
         ],
       )),
     );

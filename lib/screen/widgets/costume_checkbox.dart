@@ -16,12 +16,12 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   Widget build(BuildContext context) {
     _isSlected = widget.isCheck;
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 1000),
+      duration: Duration(microseconds: 500),
       curve: Curves.fastLinearToSlowEaseIn,
       child: Container(
         color: _isSlected ? Colors.black.withOpacity(0.1) : Colors.transparent,
-        width: 130,
-        height: 150,
+        width: MediaQuery.of(context).size.height / 5,
+        height: MediaQuery.of(context).size.height / 4,
         child: _isSlected
             ? const Icon(
                 Icons.check,

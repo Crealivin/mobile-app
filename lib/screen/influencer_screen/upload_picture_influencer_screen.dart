@@ -26,7 +26,7 @@ class UploadInFotofluencerScreen extends StatelessWidget {
         title: Text('Unggah Portofolio'),
         actions: [
           IconButton(onPressed: (){
-           print(provUploadInfluenc.displayImage);
+           print(provUploadInfluenc.fileName);
             print(namaProd.text);
             print(deskripsi.text);
             Navigator.pushNamed(context, '/done-regitration-influencer-screen');
@@ -51,12 +51,12 @@ class UploadInFotofluencerScreen extends StatelessWidget {
                 SizedBox(
                   height: 8,
                 ),
-                provUploadInfluenc.displayImage != null
+                provUploadInfluenc.fileName != null
                     ? Container(
                         height: 350,
                         width: double.infinity,
-                        child: Image.file(
-                          File(provUploadInfluenc.displayImage.toString()),
+                        child: Image.memory(
+                         provUploadInfluenc.fileBytes,
                           fit: BoxFit.cover,
                         ),
                       )
@@ -68,11 +68,11 @@ class UploadInFotofluencerScreen extends StatelessWidget {
                 SizedBox(
                   height: 24,
                 ),
-                textUploadProduct('Judul Foto',namaProd),
+                textUploadProduct('Judul Foto',namaProd,false),
                 SizedBox(
                   height: 24,
                 ),
-                textUploadProduct('Deskripsi foto',deskripsi),
+                textUploadProduct('Deskripsi foto',deskripsi,true),
                 SizedBox(
                   height: 24,
                 ),
@@ -85,8 +85,9 @@ class UploadInFotofluencerScreen extends StatelessWidget {
     );
   }
 
-  Widget textUploadProduct(String _label,TextEditingController controller) {
+  Widget textUploadProduct(String _label,TextEditingController controller, bool maxLine) {
     return TextField(
+      maxLines: maxLine?5: 1,
       controller: controller,
       decoration: InputDecoration(
           border: OutlineInputBorder(),

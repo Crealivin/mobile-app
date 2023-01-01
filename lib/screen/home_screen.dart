@@ -14,7 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          SliverAppBar( 
+            leadingWidth: double.infinity ,
             expandedHeight: 350.0,
             floating: true,
             stretch: true,
@@ -52,13 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 32,
                   ),
                   SizedBox(
-                    height: 38,
+                    height: MediaQuery.of(context).size.height*0.06,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushNamed('/choosen-signup');
                       },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
+                          
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0),
                           ),
@@ -79,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 30,
                   ),
                   SizedBox(
-                    height: 38,
+                    height: MediaQuery.of(context).size.height*0.06,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushNamed('/choose-signin');
@@ -307,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(left: 131, right: 131),
                   child: SizedBox(
                     //width: 126.0,
-                    height: 36,
+                    height: MediaQuery.of(context).size.height*0.06,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushNamed('/choosen-signup');

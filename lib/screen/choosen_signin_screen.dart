@@ -152,8 +152,8 @@ class _ChooseSignInScreenState extends State<ChooseSignInScreen> {
       children: [
         Container(
           margin: const EdgeInsets.only(bottom: 12.0, top: 12.0),
-          height: 100,
-          width: 100,
+          height: MediaQuery.of(context).size.height/5.5,
+          width: MediaQuery.of(context).size.height/5.5,
           child: Image.asset(
             imageAsset,
             fit: BoxFit.cover,

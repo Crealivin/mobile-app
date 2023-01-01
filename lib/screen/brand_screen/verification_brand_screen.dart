@@ -8,9 +8,7 @@ class VerificationBrandScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController _otpText1 = TextEditingController();
-    TextEditingController _otpText2 = TextEditingController();
-    TextEditingController _otpText3 = TextEditingController();
-    TextEditingController _otpText4 = TextEditingController();
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -24,6 +22,7 @@ class VerificationBrandScreen extends StatelessWidget {
               icon: const Icon(Icons.arrow_back),
             ),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -41,18 +40,14 @@ class VerificationBrandScreen extends StatelessWidget {
                   SizedBox(
                     height: 48,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      OtpWidget(
-                        controller: _otpText1,
-                      ),
-                      OtpWidget(
-                        controller: _otpText2,
-                      ),
-                      OtpWidget(controller: _otpText3),
-                      OtpWidget(controller: _otpText4)
-                    ],
+                 TextField(
+                  controller: _otpText1,
+                    decoration: InputDecoration(
+                      
+                      label: Text('Kode Verifikasi'),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                    ),
                   ),
                   SizedBox(height: 32,),
                   TextButton(
@@ -67,10 +62,7 @@ class VerificationBrandScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
               child: ElevatedButton(
                 onPressed: () {
-                  print(_otpText1.text +
-                      _otpText2.text +
-                      _otpText3.text +
-                      _otpText4.text);
+                  print(_otpText1.text);
                   Navigator.pushNamed(context, '/edit-profile-brand-screen');
                 },
                 child:

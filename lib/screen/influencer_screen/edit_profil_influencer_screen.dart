@@ -8,21 +8,19 @@ class EditProfileInfluencerScreen extends StatefulWidget {
       _EditProfileInfluencerScreenState();
 }
 
-class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScreen> {
-    bool _isBeauty = false;
-    bool _isFashion = false;
-    final TextEditingController _username = TextEditingController();
-    final TextEditingController _namaLengkap = TextEditingController();
-    final TextEditingController _namaPangilan = TextEditingController();
-    final TextEditingController _instagram = TextEditingController();
-    final TextEditingController _tiktok = TextEditingController();
-    final TextEditingController _domisili = TextEditingController();
-    
+class _EditProfileInfluencerScreenState
+    extends State<EditProfileInfluencerScreen> {
+  bool _isBeauty = false;
+  bool _isFashion = false;
+  final TextEditingController _username = TextEditingController();
+  final TextEditingController _namaLengkap = TextEditingController();
+  final TextEditingController _namaPangilan = TextEditingController();
+  final TextEditingController _instagram = TextEditingController();
+  final TextEditingController _tiktok = TextEditingController();
+  final TextEditingController _domisili = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-   
-    
     var itemsDomisili = [
       'Jakarta',
       'Depok',
@@ -71,7 +69,6 @@ class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScree
                       height: 32,
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -104,7 +101,7 @@ class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScree
                                       value: _isBeauty,
                                       onChanged: (value) {
                                         setState(() {
-                                         value= _isBeauty =! _isBeauty;
+                                          value = _isBeauty = !_isBeauty;
                                         });
                                       }),
                                   Text('Beauty')
@@ -112,11 +109,11 @@ class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScree
                               ),
                               Row(
                                 children: [
-                                 Checkbox(
+                                  Checkbox(
                                       value: _isFashion,
                                       onChanged: (value) {
                                         setState(() {
-                                         value= _isFashion =! _isFashion;
+                                          value = _isFashion = !_isFashion;
                                         });
                                       }),
                                   Text('Fashion')
@@ -163,9 +160,12 @@ class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScree
                             height: 20,
                           ),
                           const TextField(
+                            maxLines: 5,
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                label: Text('Bio'),
+                                label: Text(
+                                  'Bio',
+                                ),
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.auto),
                           ),
@@ -226,15 +226,20 @@ class _EditProfileInfluencerScreenState extends State<EditProfileInfluencerScree
                     const SizedBox(
                       height: 30,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/choosen-picture-influencer-screen');
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black),
-                      child: const Text(
-                        'Lanjut',
-                        style: TextStyle(color: Colors.white),
+                    Container(
+                      height: MediaQuery.of(context).size.height*0.05,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, '/choosen-picture-influencer-screen');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black),
+                        child: const Text(
+                          'Lanjut',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ],
